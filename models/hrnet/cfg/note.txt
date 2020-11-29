@@ -1,0 +1,17 @@
+trainval.yaml 多指定了
+  EXTRA_TRAIN_SET: 'list/cityscapes/trainval.lst'
+
+            w48             w64
+4           64              64
+4 4         48 96           64 128          从 stage2 开始改变 channel 基数
+4 4 4       48 96 192       64 128 256
+4 4 4 4     48 96 192 384   64 128 256 512
+
+hrnet vs hrnet_ocr
+ocr 双输出，balance weights
+MODEL
+    NUM_OUTPUTS: 2
+LOSS
+    BALANCE_WEIGHTS: [0.4, 1]
+
+
